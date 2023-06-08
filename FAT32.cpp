@@ -1,11 +1,8 @@
-/*
-FAT32 class
-각 클래스들 적절한 이니셜로 생성
-*/
-#include <fstream>
+#include "boot_record.hpp"
+#include "FatTable.cpp" // 보통 hpp파일을 불러온다(hpp로 수정필요)
 #include "node.cpp"
-#include "boot_record.cpp"
-#include "FatTable.cpp"
+
+#include <fstream>
 
 using namespace std;
 
@@ -15,9 +12,9 @@ class Fat32
         Fat32(ifstream* ifs)
         {
             this->ifs = ifs;
-            // bootrecord에서 읽어야 하는 정보는 0x0 ~ 0x20까지
-            char buffer[0x20] = { 0 };
-            ifs->read(buffer, 0x20);
+            
+            char buffer[0x200] = { 0 }; // 처음 한 sector를 전부 읽기 위해 0x200만큼 읽도록 수정
+            ifs->read(buffer, 0x200);   //  mdf파일을 열어보면 Byte Per Sector = 0x200인것을 알 수 있다.
             br = new BootRecord(buffer);
         }
 
@@ -30,7 +27,9 @@ class Fat32
 
         // test case를 위해 private 변수 리턴
         auto get_br() -> BootRecord*
+        {
             return br;
+        }
 
     private:
         ifstream* ifs;
