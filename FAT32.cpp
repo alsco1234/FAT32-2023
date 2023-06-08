@@ -28,10 +28,9 @@ class Fat32
         }
         */
 
+        // test case를 위해 private 변수 리턴
         auto get_br() -> BootRecord*
-        {
             return br;
-        }
 
     private:
         ifstream* ifs;
