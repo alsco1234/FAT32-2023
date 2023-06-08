@@ -4,5 +4,5 @@
 
 class FatTable{
     public:
-        FatTable(char* fat_bytes, int fat_size)
-}
+        FatTable(char* fat_bytes, int fat_size);
+};

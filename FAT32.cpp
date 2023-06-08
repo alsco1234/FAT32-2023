@@ -2,6 +2,12 @@
 FAT32 class
 각 클래스들 적절한 이니셜로 생성
 */
+#include <fstream>
+#include "node.cpp"
+#include "boot_record.cpp"
+#include "FatTable.cpp"
+
+using namespace std;
 
 class Fat32
 {
@@ -22,9 +28,14 @@ class Fat32
         }
         */
 
+        auto get_br() -> BootRecord*
+        {
+            return br;
+        }
+
     private:
         ifstream* ifs;
         BootRecord* br;
         FatTable* fat;
         Node* root;
-}
+};
