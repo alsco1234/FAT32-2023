@@ -1,6 +1,4 @@
-#include "boot_record.hpp"
-#include "FatTable.cpp" // 보통 hpp파일을 불러온다(hpp로 수정필요)
-#include "node.cpp"
+#include "../br/boot_record.hpp"
 
 #include <fstream>
 
@@ -18,13 +16,6 @@ class Fat32
             this->br = new BootRecord(buffer);
         }
 
-        /* 하나의 노드 받아오기
-        Node* GetNode(char const* name)
-        {
-            
-        }
-        */
-
         // test case를 위해 private 변수 리턴
         auto get_br() -> BootRecord*
         {
@@ -34,6 +25,6 @@ class Fat32
     private:
         ifstream* ifs;
         BootRecord* br;
-        FatTable* fat;
-        Node* root;
+        //FatTable* fat;
+        //Node* root;
 };
