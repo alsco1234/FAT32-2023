@@ -18,10 +18,14 @@ namespace script::engine::fs
     
         auto good() const -> bool;
 
+        auto get_br() -> BootRecord*;   //  테스트 목적 함수
+
+    private:
+    BootRecord* br;
+
     private:
         string fname;
         ifstream in;
-        //BootRecord br;
+        char* buffer;
     };
-
 }
