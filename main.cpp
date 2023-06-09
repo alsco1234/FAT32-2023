@@ -16,7 +16,8 @@ int main()
 
     fs::Fat32 a(fat32_data);
 
-    cout << boolalpha << a.good() << endl;
+    cout << "Read file success : " << boolalpha <<  a.good() << endl;
+    
 
     return 0;
 }

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "../br/boot_record.hpp"
+
 #include <fstream>
 #include <string>
 
@@ -15,8 +17,11 @@ namespace script::engine::fs
         ~Fat32();
     
         auto good() const -> bool;
-    public:
+
+    private:
         string fname;
+        ifstream in;
+        //BootRecord br;
     };
 
 }

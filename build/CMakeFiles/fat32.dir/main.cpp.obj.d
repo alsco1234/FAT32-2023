@@ -1,6 +1,7 @@
 CMakeFiles/fat32.dir/main.cpp.obj: \
  C:\Users\kimmi\Desktop\FAT32-2023\main.cpp \
  C:\Users\kimmi\Desktop\FAT32-2023\fs/fat32.hpp \
+ C:/Users/kimmi/Desktop/FAT32-2023/br/boot_record.hpp \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
