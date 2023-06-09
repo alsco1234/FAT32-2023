@@ -18,7 +18,13 @@ int main()
 
     cout << "Read file success: " << boolalpha <<  a.good() << endl;
 
-    cout << "Bytes per sector: " << a.get_br()->bytes_per_sector << endl;
+    cout << "Bytes per sector: " << a.get_br()->bytes_per_sector << endl;   // for test br
+
+    // TODO
+    // Directory Entry를 탐색하면서, fat_table에 vector형태로 저장한다. -> DirectoryEntry, FatTable class
+    // fat_table로 부터 entry를 하나씩 꺼내 node를 만든다. ->  Node class
+    // entry의 정보가 저장된 node로부터, start ~ end cluster를 참고하여 bin파일을 읽은 후, export한다.
+    // 최종적으로 Fat32 객체 하나로 모두 작동한다.
 
     return 0;
 }
