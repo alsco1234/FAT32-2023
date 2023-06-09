@@ -1,30 +1,17 @@
+#include "fat32.hpp"
 #include "../br/boot_record.hpp"
 
 #include <fstream>
 
-using namespace std;
-
-class Fat32
+namespace script::engine::fs
 {
-    public:
-        Fat32(ifstream* ifs)
-        {
-            this->ifs = ifs;
-            
-            char buffer[0x200] = { 0 }; // 처음 한 sector를 전부 읽기 위해 0x200만큼 읽도록 수정
-            ifs->read(buffer, 0x200);   //  mdf파일을 열어보면 Byte Per Sector = 0x200인것을 알 수 있다.
-            this->br = new BootRecord(buffer);
-        }
+    Fat32::Fat32(string_view _fname) : fname(_fname) {}
 
-        // test case를 위해 private 변수 리턴
-        auto get_br() -> BootRecord*
-        {
-            return this->br;
-        }
+    Fat32::~Fat32() {}
 
-    private:
-        ifstream* ifs;
-        BootRecord* br;
-        //FatTable* fat;
-        //Node* root;
-};
+    auto Fat32::good() const -> bool
+    {
+        ifstream in(fname);
+        return in.is_open();
+    }
+}

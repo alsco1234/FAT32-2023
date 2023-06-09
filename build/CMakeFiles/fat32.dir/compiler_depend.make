@@ -135,7 +135,7 @@ CMakeFiles/fat32.dir/br/boot_record.cpp.obj: C:/Users/kimmi/Desktop/FAT32-2023/b
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc
 
 CMakeFiles/fat32.dir/fs/fat32.cpp.obj: C:/Users/kimmi/Desktop/FAT32-2023/fs/fat32.cpp \
-  C:/Users/kimmi/Desktop/FAT32-2023/br/boot_record.hpp \
+  C:/Users/kimmi/Desktop/FAT32-2023/fs/fat32.hpp \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
@@ -268,17 +268,18 @@ CMakeFiles/fat32.dir/fs/fat32.cpp.obj: C:/Users/kimmi/Desktop/FAT32-2023/fs/fat3
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/codecvt.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fstream.tcc
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fstream.tcc \
+  C:/Users/kimmi/Desktop/FAT32-2023/br/boot_record.hpp
 
 CMakeFiles/fat32.dir/main.cpp.obj: C:/Users/kimmi/Desktop/FAT32-2023/main.cpp \
   C:/Users/kimmi/Desktop/FAT32-2023/fs/fat32.hpp \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iosfwd \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ios \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iosfwd \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/stringfwd.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/memoryfwd.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/postypes.h \
@@ -398,9 +399,14 @@ CMakeFiles/fat32.dir/main.cpp.obj: C:/Users/kimmi/Desktop/FAT32-2023/main.cpp \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/ctype_inline.h \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/locale_facets.tcc \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/basic_ios.tcc \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/ostream \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/ostream.tcc \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/istream \
-  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/codecvt.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/basic_file.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fstream.tcc \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/iostream
 
 CMakeFiles/fat32.dir/util/util.cpp.obj: C:/Users/kimmi/Desktop/FAT32-2023/util/util.cpp \
   C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/cstdint \
@@ -689,6 +695,8 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/istream.tcc:
 
 C:/Users/kimmi/Desktop/FAT32-2023/fs/fat32.cpp:
 
+C:/Users/kimmi/Desktop/FAT32-2023/fs/fat32.hpp:
+
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/fstream:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/codecvt.h:
@@ -698,7 +706,5 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32/bits/c++io.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/bits/fstream.tcc:
-
-C:/Users/kimmi/Desktop/FAT32-2023/fs/fat32.hpp:
 
 C:/Users/kimmi/Desktop/FAT32-2023/util/util.cpp:
