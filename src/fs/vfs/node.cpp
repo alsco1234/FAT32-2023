@@ -3,7 +3,7 @@
 */
 #include <string>
 #include <fstream>
-#include "directory_entry.cpp"
+#include "../fat/directory_entry.cpp"
 
 using namespace std;
 

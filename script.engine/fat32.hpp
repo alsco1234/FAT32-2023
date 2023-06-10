@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../br/boot_record.hpp"
-#include "../dr/directory_entry.hpp"
-#include "../vfs/node.hpp"
+#include "../src/fs/fat/boot_record.hpp"
+#include "../src/fs/fat/directory_entry.hpp"
+#include "../src/fs/vfs/node.hpp"
 
 #include <fstream>
 #include <string>
