@@ -14,6 +14,9 @@ set(HEADERS fs/fat32.hpp
             util/util.hpp
 )
 
-set
+include_directories{
+    ../include
+    ../develop/include
+}
 
 add_executable(fat32 ${SOURCES} ${HEADERS})
