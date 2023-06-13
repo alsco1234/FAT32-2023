@@ -15,8 +15,11 @@ set(HEADERS fs/fat32.hpp
 )
 
 include_directories{
-    ../include
-    ../develop/include
+    ../script.engine # fat32
+    ../src/fs/fat # boot_record, directory_entry, fat_table
+    ../src/fs/vfs # node
+    # ../src/fs # fat_32_main
+    ../util/ # util
 }
 
 add_executable(fat32 ${SOURCES} ${HEADERS})

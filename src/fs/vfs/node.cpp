@@ -3,7 +3,7 @@
 */
 #include <string>
 #include <fstream>
-#include <timestamp>
+#include <chrono>
 #include "../fat/directory_entry.cpp"
 
 using namespace std;
@@ -27,6 +27,8 @@ class Node{
     private:
         string name;
         vector<Node> childern; //linked list로 자식 node 연결
-        timestamp mtime;
+        chrono::time_point<chrono::system_clock> mtime;
+        chrono::time_point<chrono::system_clock> atime;
+        chrono::time_point<chrono::system_clock> ctime;
         NodeStreaam stream;
 };
