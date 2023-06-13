@@ -12,9 +12,16 @@ class Node{
     public:
         Node(DirectoryEntry* de, ifstream* ifs);
 
-        bool ExportTo(string path){
+        auto ExportTo(string path) -> bool
+        {
+            /*
+                STREAM으로 read 연속적 읽기 구현
+                fat는 단순하게 연속적인 cluster 번호로 ㅇ릭기 때문에
+                buf로 시작점과 size 받아 연속으로 읽기
+            */
             size = stream.Size();
             buf = stream.read(0, sz);
+            return true;
         }
 
     private:
