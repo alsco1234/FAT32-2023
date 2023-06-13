@@ -1,0 +1,1 @@
+// directory_entry_table을 벡터로 저장 (directory_entry_table들)

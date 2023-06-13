@@ -14,5 +14,6 @@ set(HEADERS fs/fat32.hpp
             util/util.hpp
 )
 
+set
 
 add_executable(fat32 ${SOURCES} ${HEADERS})

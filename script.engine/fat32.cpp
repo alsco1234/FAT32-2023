@@ -25,4 +25,20 @@ namespace script::engine::fs
     {
         return this->br;
     }
+
+    /*
+    auto Fat32::make_fat_table(Fat32::get_br().reserved_area)
+    {
+        in.seekg(reserved_area)
+        in.read(buffer, 0x20);
+        ft = new fat_table(buffr);
+    }
+    */
+
+    auto Fat32::make_one_fat(Fat:get_br().reserved_area)
+    {
+        in.seekg(reserved_area)
+        in.read(buffer, 0x20);
+        ft = new fat_table(buffr);
+    }
 }
