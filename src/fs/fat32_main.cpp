@@ -11,8 +11,11 @@ using namespace std;
 int main()
 {
     //auto home = string(getenv("HOME"));
-    auto fat32_data = "../data/fat32.mdf";
-    auto export_path = "../test";
+    auto fat32_data = "./data/fat32.mdf";
+    auto export_path = "../../test";
+
+    cout << "fat32_data: " << fat32_data << endl;
+    cout << "export_path: " << export_path << endl;
 
     fs::Fat32 a(fat32_data);
 

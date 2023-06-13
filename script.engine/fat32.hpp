@@ -2,7 +2,7 @@
 
 #include "../src/fs/fat/boot_record.hpp"
 #include "../src/fs/fat/directory_entry.hpp"
-#include "../src/fs/vfs/node.hpp"
+//#include "../src/fs/vfs/node.hpp"
 
 #include <fstream>
 #include <string>
@@ -20,6 +20,7 @@ namespace script::engine::fs
     public:
         auto good() const -> bool;
         auto get_br() -> BootRecord*;   //  테스트 목적 함수
+        auto make_one_fat(int reserved_area) -> bool;
 
     private:
         BootRecord* br;

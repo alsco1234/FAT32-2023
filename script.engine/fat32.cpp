@@ -35,10 +35,12 @@ namespace script::engine::fs
     }
     */
 
-    auto Fat32::make_one_fat(Fat:get_br().reserved_area)
+    //auto make_one_fat(Fat:get_br().reserved_area) -> bool;
+    auto Fat32::make_one_fat(int reserved_area) -> bool
     {
-        in.seekg(reserved_area)
+        in.seekg(reserved_area);
         in.read(buffer, 0x20);
-        ft = new fat_table(buffr);
+        //ft = new fat_table(buffr);
+        return true;
     }
 }

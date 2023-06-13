@@ -1,11 +1,16 @@
 #pragma once
 
+//#include "../vfs/node.cpp"
 #include <vector>
+#include <chrono>
+
+using namespace std;
 
 // 하나의 node를 만들기 위한 정보 가지고있음
 class DirectoryEntry
 {
 public:
+    DirectoryEntry(char* buffer, vector<uint32_t> fat);
     // TODO
     // Node하나를 만들때 마다, Directory Entry객체가 하나씩 생성된다.
     // Directory Entry는 32 byte씩 읽는다.
@@ -14,6 +19,12 @@ public:
 
 
 private:
-    file_name = 'leaf.jpg';
-    attribute = 00;
+    //file_name = 'leaf.jpg';
+    //attribute = 00;
+   //string name;
+    //vector<Node> childern; // linked list로 자식 node 연결
+    chrono::time_point<chrono::system_clock> mtime; // modified time
+    chrono::time_point<chrono::system_clock> atime; // access time
+    chrono::time_point<chrono::system_clock> ctime; // created time
+    //NodeStreaam stream;
 };

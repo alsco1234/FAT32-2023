@@ -19,8 +19,8 @@ class Node{
                 fat는 단순하게 연속적인 cluster 번호로 ㅇ릭기 때문에
                 buf로 시작점과 size 받아 연속으로 읽기
             */
-            size = stream.Size();
-            buf = stream.read(0, size);
+            //size = stream.Size();
+            //sizebuf = stream.read(0, size);
 
             // 파일에 쓰기
             return true;
@@ -32,5 +32,5 @@ class Node{
         chrono::time_point<chrono::system_clock> mtime; // modified time
         chrono::time_point<chrono::system_clock> atime; // access time
         chrono::time_point<chrono::system_clock> ctime; // created time
-        NodeStreaam stream;
+        //NodeStreaam stream;
 };
