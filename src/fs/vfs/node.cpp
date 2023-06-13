@@ -20,15 +20,17 @@ class Node{
                 buf로 시작점과 size 받아 연속으로 읽기
             */
             size = stream.Size();
-            buf = stream.read(0, sz);
+            buf = stream.read(0, size);
+
+            // 파일에 쓰기
             return true;
         }
 
     private:
         string name;
-        vector<Node> childern; //linked list로 자식 node 연결
-        chrono::time_point<chrono::system_clock> mtime;
-        chrono::time_point<chrono::system_clock> atime;
-        chrono::time_point<chrono::system_clock> ctime;
+        vector<Node> childern; // linked list로 자식 node 연결
+        chrono::time_point<chrono::system_clock> mtime; // modified time
+        chrono::time_point<chrono::system_clock> atime; // access time
+        chrono::time_point<chrono::system_clock> ctime; // created time
         NodeStreaam stream;
 };
