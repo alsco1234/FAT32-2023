@@ -2,9 +2,11 @@
 빨간네모 분석하는 구조체
 */
 #include "directory_entry.hpp"
+#include "../../../util/util.hpp"
 #include <vector>
 #include <fstream>
 #include <chrono>
+#include <iostream>
 
 using namespace std;
 
@@ -17,13 +19,36 @@ using namespace std;
 
 // 생성자
 DirectoryEntry::DirectoryEntry(char* buffer, vector<uint32_t> fat)
-{
-    /* buffer 읽어서 분석
-    32 바이트 읽어서
-    name이랑
-    childeren이랑 
-    mac time 분석
-    */
-    // 분석한거 가지고 new node 만들기
+{   
+    this->name = string(buffer, 0, 8);
+
+    this->extension = string(buffer + 0x08, 8, 3);
+
+    int attr = io::to_le1(buffer + 0x0b);
+    if ((attr & 0x10) == 0x10) this->is_dir = true;
+    else this->is_dir = false;
+
+    this->cluster_no = io::to_le2(buffer+0x14)<<2 | io::to_le2(buffer+0x1a);
+
+    this->file_size = io::to_le4(buffer+0x1c);
+            
+    this->whole_cluster.push_back(this->cluster_no);
+    uint32_t current_no = fat[this->cluster_no];
+    while (current_no != 0xfffffff)
+    {
+        this->whole_cluster.push_back(current_no);
+        current_no = fat[current_no];
+    }
+
+    this->mtime = std::chrono::system_clock::from_time_t(io::to_le2(buffer+0x10));
+    this->atime = std::chrono::system_clock::from_time_t(io::to_le2(buffer+0x12));
+    this->ctime = std::chrono::system_clock::from_time_t(io::to_le4(buffer+0x16));
+
     //Node node = new node(DirectoryEntry* de, ifstream* ifs);
+}
+
+// private name 테스트용 함수
+auto DirectoryEntry::get_name() -> string
+{
+    return name;
 }

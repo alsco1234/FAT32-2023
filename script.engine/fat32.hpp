@@ -2,6 +2,7 @@
 
 #include "../src/fs/fat/boot_record.hpp"
 #include "../src/fs/fat/fat_table.hpp"
+#include "../src/fs/fat/directory_entry.hpp"
 //#include "../src/fs/vfs/node.hpp"
 
 #include <fstream>
@@ -21,10 +22,12 @@ namespace script::engine::fs
         auto good() const -> bool;
         auto get_br() -> BootRecord*;   //  테스트 목적 함수
         auto get_ft() -> FatTable*;   //  테스트 목적 함수
+        auto get_de() -> DirectoryEntry*;   //  테스트 목적 함수
 
     private:
         BootRecord* br;
         FatTable* ft;
+        DirectoryEntry* de;
 
     private:
         string fname;
