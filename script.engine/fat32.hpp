@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../src/fs/fat/boot_record.hpp"
-#include "../src/fs/fat/directory_entry.hpp"
+#include "../src/fs/fat/fat_table.hpp"
 //#include "../src/fs/vfs/node.hpp"
 
 #include <fstream>
@@ -20,11 +20,11 @@ namespace script::engine::fs
     public:
         auto good() const -> bool;
         auto get_br() -> BootRecord*;   //  테스트 목적 함수
-        auto make_one_fat(int reserved_area) -> bool;
+        auto get_ft() -> FatTable*;   //  테스트 목적 함수
 
     private:
         BootRecord* br;
-        DirectoryEntry* dr;
+        FatTable* ft;
 
     private:
         string fname;

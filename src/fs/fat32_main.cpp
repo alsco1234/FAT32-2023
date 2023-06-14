@@ -23,6 +23,9 @@ int main()
 
     cout << "Bytes per sector: " << a.get_br()->bytes_per_sector << endl;   // for test br
 
+    cout << "Fat table cluster 1 name: " << hex << a.get_ft()->fat[0] << endl;   // for test br : fffff8
+    cout << "Fat table cluster 8 name: " << hex << a.get_ft()->fat[7] << endl;   // for test br : 8
+
     // TODO
     // Directory Entry를 탐색하면서, fat_table에 vector형태로 저장한다. -> DirectoryEntry, FatTable class
     // fat_table로 부터 entry를 하나씩 꺼내 node를 만든다. ->  Node class

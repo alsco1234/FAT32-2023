@@ -1,5 +1,6 @@
 #include "fat32.hpp"
 #include "../src/fs/fat/boot_record.hpp"
+#include "../src/fs/fat/fat_table.hpp"
 
 #include <fstream>
 
@@ -9,6 +10,12 @@ namespace script::engine::fs
     {   
         in.read(buffer, 0x200);
         br = new BootRecord(buffer);
+
+        in.seekg(br->fat1_offset, ios_base::beg);
+        auto fat_size = br->reserved_area * br->bytes_per_sector; //215c00
+        vector<char> fat_bytes(fat_size);
+        in.read(&fat_bytes[0], fat_size);
+        ft = new FatTable(&fat_bytes[0], fat_size);
     }
 
     Fat32::~Fat32()
@@ -26,21 +33,8 @@ namespace script::engine::fs
         return this->br;
     }
 
-    /*
-    auto Fat32::make_fat_table(Fat32::get_br().reserved_area)
+    auto Fat32::get_ft() -> FatTable*
     {
-        in.seekg(reserved_area)
-        in.read(buffer, 0x20);
-        ft = new fat_table(buffr);
-    }
-    */
-
-    //auto make_one_fat(Fat:get_br().reserved_area) -> bool;
-    auto Fat32::make_one_fat(int reserved_area) -> bool
-    {
-        in.seekg(reserved_area);
-        in.read(buffer, 0x20);
-        //ft = new fat_table(buffr);
-        return true;
+        return this->ft;
     }
 }
